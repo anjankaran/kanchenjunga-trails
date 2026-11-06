@@ -26,7 +26,7 @@ export default function Places() {
             aria-pressed={place.id === activeId}
             onClick={() => setActiveId(place.id)}
           >
-            <img className="place-card-image" src={images[place.id]} alt="" loading="lazy" />
+            <img className="place-card-image" src={images[place.id]} alt={`${place.name}, North Bengal travel destination`} loading="lazy" />
             <span className="place-card-meta">{place.altitude}</span>
             <span className="place-card-copy"><span className="place-card-name">{place.name}</span><span>{place.season}</span></span>
           </button>
