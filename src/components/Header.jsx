@@ -6,6 +6,7 @@ const links = [["Destinations", "#places"], ["NJP Hub", "#hub"], ["Packages", "#
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -20,5 +21,5 @@ export default function Header() {
     return () => { window.removeEventListener("scroll", onScroll); observer.disconnect(); };
   }, []);
 
-  return <header className={`header${scrolled ? " scrolled" : ""}`}><a className="brand" href="#top"><img className="brand-logo" src={logo} alt="Kanchenjunga Trails logo" /><span>Kanchenjunga Trails<small>SILIGURI · NJP</small></span></a><nav aria-label="Main">{links.map(([label, href]) => <a className={active === href ? "selected" : ""} key={href} href={href} onClick={() => setActive(href)}>{label}</a>)}</nav><a className="phone" href="tel:+919800012345">☎ &nbsp;+91 98000 12345</a></header>;
+  return <header className={`header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}><a className="brand" href="#top" onClick={() => setMenuOpen(false)}><img className="brand-logo" src={logo} alt="Kanchenjunga Trails logo" /><span>Kanchenjunga Trails<small>FIND YOUR OWN ALTITUDE</small></span></a><nav aria-label="Main">{links.map(([label, href]) => <a className={active === href ? "selected" : ""} key={href} href={href} onClick={() => { setActive(href); setMenuOpen(false); }}>{label}</a>)}</nav><a className="phone" href="tel:+919800012345">☎ &nbsp;+91 98000 12345</a><button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button></header>;
 }
