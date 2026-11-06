@@ -5,7 +5,7 @@ export const places = [
   { id: "kalimpong", name: "Kalimpong", altitude: "1,247 m", season: "Mar–May, Oct–Dec",
     text: "Monasteries, flower nurseries and quiet viewpoints, with fewer crowds than Darjeeling." },
   { id: "kurseong", name: "Kurseong", altitude: "1,458 m", season: "Mar–May, Sep–Nov",
-    text: "Tea-garden stays and forest walks on the road between the plains and Darjeeling." },
+    text: "Tea-garden homestays and forest walks on the road between the plains and Darjeeling." },
   { id: "mirik", name: "Mirik", altitude: "1,495 m", season: "Mar–Jun, Oct–Nov",
     text: "Sumendu Lake, pine slopes and tea gardens. A calm stop for slow mornings." },
   { id: "dooars", name: "Dooars", altitude: "Plains", season: "Nov–Mar",
